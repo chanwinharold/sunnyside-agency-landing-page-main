@@ -1,10 +1,197 @@
-.attribution {
-  font-size: 11px;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-size: 18px;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.hero {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  padding: 1rem;
+  color: hsl(0, 0%, 100%);
+  background-repeat: no-repeat;
+  background-size: 35px, cover;
+}
+.hero-title {
+  text-align: center;
+}
+.hero .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero .header .nav-list {
+  display: flex;
+  gap: 1rem;
+}
+.hero .header .nav-link {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  padding-block: 0.6rem;
+}
+.hero .header .nav-link:hover {
+  background-color: hsla(0, 0%, 100%, 0.25);
+}
+
+.features {
+  min-height: 100vh;
+  display: grid;
+}
+.features article {
+  min-height: inherit;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+  gap: 1.5rem;
+}
+.features article p {
+  color: hsl(212, 27%, 19%);
+}
+.features .block-1 a, .features .block-3 a {
+  width: fit-content;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14.4px;
+  color: black;
+}
+.features .block-1 a::after, .features .block-3 a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 6px;
+  border-radius: 30px;
+  margin-top: -7px;
+}
+.features .block-1 a:hover::after {
+  background-color: hsl(51, 100%, 49%);
+}
+.features .block-1 a::after {
+  background-color: hsl(51, 100%, 79%);
+}
+.features .block-3 a:hover::after {
+  background-color: hsl(7, 99%, 70%);
+}
+.features .block-3 a::after {
+  background-color: hsl(7, 99%, 90%);
+}
+.features .block-5, .features .block-6 {
+  place-content: end;
   text-align: center;
 }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+h1, h2, h3, .feature-link {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 900;
+}
+
+ul {
+  list-style: none;
+}
+
+@media screen and (max-width: 42rem) {
+  .hero {
+    background-image: url("../images/icon-arrow-down.svg"), url("../images/mobile/image-header.jpg");
+    background-position: 50% 70%, center;
+  }
+  .hero-title {
+    font-size: 45px;
+  }
+  .hero .nav {
+    display: none;
+  }
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .features article {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .features .feature-link {
+    place-self: center;
+  }
+  .features .block-2 {
+    background-image: url("../images/mobile/image-transform.jpg");
+  }
+  .features .block-4 {
+    background-image: url("../images/mobile/image-stand-out.jpg");
+  }
+  .features .block-5 {
+    background-image: url("../images/mobile/image-graphic-design.jpg");
+  }
+  .features .block-6 {
+    background-image: url("../images/mobile/image-photography.jpg");
+  }
+}
+@media screen and (min-width: 42rem) {
+  .hero {
+    background-image: url("../images/icon-arrow-down.svg"), url("../images/desktop/image-header.jpg");
+    background-position: center;
+  }
+  .hero-title {
+    font-size: 54px;
+  }
+  .hero .nav-link {
+    padding-inline: 0.25rem;
+  }
+  .features {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr;
+  }
+  .features article {
+    padding: 2rem 5rem;
+  }
+  .features .block-1 {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .features .block-2 {
+    grid-row: 1;
+    grid-column: 2;
+    background-image: url("../images/desktop/image-transform.jpg");
+  }
+  .features .block-3 {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  .features .block-4 {
+    grid-row: 2;
+    grid-column: 1;
+    background-image: url("../images/desktop/image-stand-out.jpg");
+  }
+  .features .block-5 {
+    grid-row: 3;
+    grid-column: 1;
+    background-image: url("../images/desktop/image-graphic-design.jpg");
+  }
+  .features .block-6 {
+    grid-row: 3;
+    grid-column: 2;
+    background-image: url("../images/desktop/image-photography.jpg");
+  }
+}
+@media screen and (min-width: 64rem) {
+  .hero {
+    padding: 2rem;
+  }
+  .hero .nav-link {
+    padding-inline: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

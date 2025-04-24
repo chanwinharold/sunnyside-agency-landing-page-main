@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 	<meta name="description" content="Sunnyside agency landing page">
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 	<link rel="stylesheet" href="assets/css/style.css">
 
@@ -13,54 +16,110 @@
 	<title>Frontend Mentor | Sunnyside agency landing page</title>
 </head>
 <body>
-About
-Services
-Projects
-Contact
+	<main id="about" class="hero">
+		<header class="header">
+			<img class="logo" src="assets/images/logo.svg" alt="Sunnyside logo">
 
-We are creatives
+			<nav class="nav">
+				<ul class="nav-list">
+					<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+					<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+					<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<h1 class="hero-title">We are creatives</h1>
+	</main>
 
-Transform your brand
+	<section id="services" class="features">
+		<article class="feature-image block-2">
+			<!-- image here -->
+		</article>
 
-We are a full-service creative agency specializing in helping brands grow fast. 
-Engage your clients through compelling visuals that do most of the marketing for you.
+		<article class="feature-card block-1">
+			<h2 class="feature-title">Transform your brand</h2>
+			<p class="feature-text">We are a full-service creative agency specializing in helping brands grow fast. 
+			Engage your clients through compelling visuals that do most of the marketing for you.</p>
+			<a class="feature-link" href="#">Learn more</a>
+		</article>
 
-Learn more
+		<article class="feature-image block-4">
+			<!-- image here -->
+		</article>
 
-Stand out to the right audience
+		<article class="feature-card block-3">
+			<h2 class="feature-title">Stand out to the right audience</h2>
+			<p class="feature-text">Using a collaborative formula of designers, researchers, 
+				photographers, videographers, and copywriters, we'll build 
+				and extend your brand in digital places.</p>
+			<a class="feature-link" href="#">Learn more</a>
+		</article>
 
-Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places. 
 
-Learn more
+		<article class="service-card block-5">
+			<h2 class="service-title">Graphic design</h2>
+			<p class="service-text">Great design makes you memorable. We deliver artwork that 
+				underscores your brand message and captures potential clients' attention.</p>
+		</article>
 
-Graphic design
-Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.
+		<article class="service-card block-6">
+			<h2 class="service-title">Photography</h2>
+			<p class="service-text">Increase your credibility by getting the most stunning, 
+				high-quality photos that improve your business image.</p>
+		</article>
+	</section>
 
-Photography
-Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
+	<section id="projects" class="testimonials">
+		<h2 class="testimonials-title">Client testimonials</h2>
 
-Client testimonials
+		<article class="testimonial-card">
+			<p class="testimonial-text">We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+			<h3 class="testimonial-name">Emily R.</h3>
+			<p class="testimonial-role">Marketing Director</p>
+		</article>
 
-We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.
-Emily R.
-Marketing Director
+		<article class="testimonial-card">
+			<p class="testimonial-text">Sunnyside's enthusiasm coupled with their keen interest in our brand's success made it a satisfying and enjoyable experience.</p>
+			<h3 class="testimonial-name">Thomas S.</h3>
+			<p class="testimonial-role">Chief Operating Officer</p>
+		</article>
 
-Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.
-Thomas S.
-Chief Operating Officer
+		<article class="testimonial-card">
+			<p class="testimonial-text">Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+			<h3 class="testimonial-name">Jennie F.</h3>
+			<p class="testimonial-role">Business Owner</p>
+		</article>
+	</section>
+	
+	<section class="gallery">
+		<div class="gallery-item">
+			<!-- image here -->
+		</div>
+		<div class="gallery-item">
+			<!-- image here -->
+		</div>
+		<div class="gallery-item">
+			<!-- image here -->
+		</div>
+		<div class="gallery-item">
+			<!-- image here -->
+		</div>
+	</section>
 
-Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
-Jennie F.
-Business Owner
+	<footer id="contact" class="footer">
+		<ul class="footer-links">
+			<li class="footer-item"><a class="footer-link" href="#">About</a></li>
+			<li class="footer-item"><a class="footer-link" href="#">Services</a></li>
+			<li class="footer-item"><a class="footer-link" href="#">Projects</a></li>
+		</ul>
 
-About
-Services
-Projects
-Contact
-
-<div class="attribution">
-Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-Coded by <a href="#">Your Name Here</a>.
-</div>
+		<ul class="social-links">
+			<li class="social-item"><a class="social-link" href="#">Facebook</a></li>
+			<li class="social-item"><a class="social-link" href="#">Instagram</a></li>
+			<li class="social-item"><a class="social-link" href="#">Twitter</a></li>
+			<li class="social-item"><a class="social-link" href="#">Pinterest</a></li>
+		</ul>
+	</footer>
 </body>
 </html>
