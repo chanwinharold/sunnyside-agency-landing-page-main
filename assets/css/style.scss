@@ -1,5 +1,4 @@
-
-// Variables de couleurs
+// Variables
 $colors: (
   // Couleurs primaires
   'soft-red': hsl(7, 99%, 70%),
@@ -16,7 +15,6 @@ $colors: (
   'white': hsl(0, 0%, 100%)
 );
 
-// Variables de typographie
 $font-sizes: (
   'body': 18px
 );
@@ -40,36 +38,55 @@ $xl: 64rem;
 // Mixins
 @mixin grid($r, $c) { grid-row: $r; grid-column: $c; }
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@mixin font-barlow {
+  font-family: map-get($fonts, 'barlow');
+}
+
+@mixin font-fraunces {
+  font-family: map-get($fonts, 'fraunces');
+}
+
+// Reset et styles de base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: map-get($font-sizes, 'body');
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: map-get($fonts, 'barlow'), sans-serif;
-    font-size: map-get($font-sizes, 'body');
+  @include font-barlow;
+  line-height: 1.6;
 
-    min-height: 100vh;
-    display: grid;
-    place-content: center;
-    background-color: map-get($colors, 'white');
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: map-get($colors, 'white');
 }
 
 .hero {
-    min-width: 100vw;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    row-gap: 5rem;
+    display: grid;
+    grid-template-rows: 10vh 10vh 20vh 60vh;
+    align-items: center;
     padding: 1rem;
     color: map-get($colors, 'white');
     background-repeat: no-repeat;
     background-size: 35px, cover;
 
-    &-title { text-align: center; }
+    &-title { 
+        grid-row: 3;
+        font-size: map-get($map: $font-sizes, $key: body)*3; 
+        text-align: center; 
+        line-height: 3rem;
+    }
 
     .header {
+        grid-row: 1;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -96,7 +113,6 @@ body {
     min-height: 100vh;
     display: grid;
 
-
     article {
         min-height: inherit;
         background-position: center;
@@ -122,7 +138,7 @@ body {
             width: 100%;
             height: 6px;
             border-radius: 30px;
-            margin-top: -7px;
+            margin-top: -10px;
         }
     } 
     .block-1 {
@@ -139,10 +155,84 @@ body {
     }
 }
 
+.testimonial {
+    min-height: 100vh;
+    display: grid;
+
+    &-title { 
+        text-align: center; 
+        text-transform: uppercase; 
+        color: map-get($map: $colors, $key: very-dark-blue)
+    }
+    &-card {
+        justify-self: start !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+    &-image {
+        width: 50px;
+        border-radius: 50%;
+    }
+    &-role { color: map-get($map: $colors, $key: very-dark-blue)}
+}
+
+.gallery {
+    min-height: 60vh;
+    
+    &-item {
+        background-position: center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+    }
+}
+
+.footer {
+    min-height: 40vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    place-content: center;
+    place-items: center;
+    justify-items: center;
+    text-align: center;
+    padding-block: 1.5rem;
+    background-color: map-get($map: $colors, $key: moderate-cyan);
+
+    a {
+        color: map-get($map: $colors, $key: dark-cyan);
+        text-decoration: none;
+        
+        &:hover { color: map-get($map: $colors, $key: "white"); }
+        &:hover img { 
+            background-color: map-get($map: $colors, $key: "white"); 
+            border-radius: 4px;
+        }
+    }
+
+    &-logo { 
+        grid-row: 1;
+        font-size: map-get($map: $font-sizes, $key: body)*2;
+        font-weight: map-get($map: $font-weights, $key: "black");
+    }
+    &-links {
+        grid-row: 2;
+        display: flex;
+        gap: 2rem;
+    }
+    .social-links {
+        grid-row: 4;
+        display: flex;
+        gap: 2rem;
+    }
+}
 
 // global styles
 h1, h2, h3, .feature-link {
-  font-family: map-get($fonts, 'fraunces'), sans-serif;
+  @include font-fraunces;
   font-weight: map-get($map: $font-weights, $key: 'black');
 }
 ul { list-style: none; }
@@ -151,10 +241,7 @@ ul { list-style: none; }
 @media screen and (max-width: $sm) {
     .hero {
         background-image: url("../images/icon-arrow-down.svg"), url('../images/mobile/image-header.jpg');
-        background-position: 50% 70%, center;
-
-        &-title { font-size: map-get($map: $font-sizes, $key: body)*2.5; }
-        
+        background-position: 50% 65%, center;        
         // -> À GERER
         .nav { display: none;}
     }
@@ -169,13 +256,25 @@ ul { list-style: none; }
         .block-5 { background-image: url("../images/mobile/image-graphic-design.jpg"); }
         .block-6 { background-image: url("../images/mobile/image-photography.jpg"); }
     }
+    .testimonial {
+        padding-block: 2rem;
+        row-gap: 2rem;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        .block-1 { @include grid(1, 1); background: url("../images/mobile/image-gallery-milkbottles.jpg") }
+        .block-2 { @include grid(1, 2); background: url("../images/mobile/image-gallery-orange.jpg") }
+        .block-3 { @include grid(2, 1); background: url("../images/mobile/image-gallery-cone.jpg") }
+        .block-4 { @include grid(2, 2); background: url("../images/mobile/image-gallery-sugar-cubes.jpg") }
+    }
 }
 @media screen and (min-width: $sm) {
     .hero {
         background-image: url("../images/icon-arrow-down.svg"), url('../images/desktop/image-header.jpg');
         background-position: center;
-
-        &-title { font-size: map-get($map: $font-sizes, $key: body)*3; }
 
         .nav-link { padding-inline: 0.25rem; }
     }
@@ -200,21 +299,35 @@ ul { list-style: none; }
             background-image: url("../images/desktop/image-photography.jpg");
         }
     }
+    .testimonial {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
+
+        &-title {
+            @include grid(1, 2);
+            justify-self: center;
+            align-self: center;
+        }
+        .block-1 {
+            @include grid(2, 1)
+        }
+        .block-2 {
+            @include grid(2, 2)
+        }
+        .block-3 {
+            @include grid(2, 3)
+        }
+    }
+    .gallery {
+        display: flex;
+        &-item { flex: 1; }
+        .block-1 { background: url("../images/desktop/image-gallery-milkbottles.jpg") }
+        .block-2 { background: url("../images/desktop/image-gallery-orange.jpg") }
+        .block-3 { background: url("../images/desktop/image-gallery-cone.jpg") }
+        .block-4 { background: url("../images/desktop/image-gallery-sugarcubes.jpg") }
+    }
 }
 @media screen and (min-width: $xl) {
     .hero { padding: 2rem;
     .nav-link { padding-inline: 1.5rem; }}
 }
-
-
-@media screen and (min-width: $sm) and (max-width: $md) {
-    
-}
-@media screen and (min-width: $md) and (max-width: $md) {
-    
-}
-
-
-
-
-

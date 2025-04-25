@@ -18,7 +18,7 @@
 <body>
 	<main id="about" class="hero">
 		<header class="header">
-			<img class="logo" src="assets/images/logo.svg" alt="Sunnyside logo">
+			<img id="logo" class="logo" src="assets/images/logo.svg" alt="Sunnyside logo">
 
 			<nav class="nav">
 				<ul class="nav-list">
@@ -70,22 +70,25 @@
 		</article>
 	</section>
 
-	<section id="projects" class="testimonials">
-		<h2 class="testimonials-title">Client testimonials</h2>
+	<section id="projects" class="testimonial">
+		<h2 class="testimonial-title">Client testimonials</h2>
 
-		<article class="testimonial-card">
+		<article class="testimonial-card block-1">
+			<img class="testimonial-image" src="assets/images/image-emily.jpg" alt="Emily photo">
 			<p class="testimonial-text">We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
 			<h3 class="testimonial-name">Emily R.</h3>
 			<p class="testimonial-role">Marketing Director</p>
 		</article>
 
-		<article class="testimonial-card">
+		<article class="testimonial-card block-2">
+			<img class="testimonial-image" src="assets/images/image-thomas.jpg" alt="Thomas photo">
 			<p class="testimonial-text">Sunnyside's enthusiasm coupled with their keen interest in our brand's success made it a satisfying and enjoyable experience.</p>
 			<h3 class="testimonial-name">Thomas S.</h3>
 			<p class="testimonial-role">Chief Operating Officer</p>
 		</article>
 
-		<article class="testimonial-card">
+		<article class="testimonial-card block-3">
+			<img class="testimonial-image" src="assets/images/image-jennie.jpg" alt="Jennie photo">
 			<p class="testimonial-text">Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
 			<h3 class="testimonial-name">Jennie F.</h3>
 			<p class="testimonial-role">Business Owner</p>
@@ -93,21 +96,22 @@
 	</section>
 	
 	<section class="gallery">
-		<div class="gallery-item">
+		<div class="gallery-item block-1">
 			<!-- image here -->
 		</div>
-		<div class="gallery-item">
+		<div class="gallery-item block-2">
 			<!-- image here -->
 		</div>
-		<div class="gallery-item">
+		<div class="gallery-item block-3">
 			<!-- image here -->
 		</div>
-		<div class="gallery-item">
+		<div class="gallery-item block-4">
 			<!-- image here -->
 		</div>
 	</section>
 
 	<footer id="contact" class="footer">
+		<a class="footer-logo" href="#logo">Sunnyside</a>
 		<ul class="footer-links">
 			<li class="footer-item"><a class="footer-link" href="#">About</a></li>
 			<li class="footer-item"><a class="footer-link" href="#">Services</a></li>
@@ -115,10 +119,10 @@
 		</ul>
 
 		<ul class="social-links">
-			<li class="social-item"><a class="social-link" href="#">Facebook</a></li>
-			<li class="social-item"><a class="social-link" href="#">Instagram</a></li>
-			<li class="social-item"><a class="social-link" href="#">Twitter</a></li>
-			<li class="social-item"><a class="social-link" href="#">Pinterest</a></li>
+			<li class="social-item"><a class="social-link" href="#"><img src="assets/images/icon-facebook.svg" width="25" alt="Facebook"></a></li>
+			<li class="social-item"><a class="social-link" href="#"><img src="assets/images/icon-instagram.svg" width="25" alt="Instagram"></a></li>
+			<li class="social-item"><a class="social-link" href="#"><img src="assets/images/icon-twitter.svg" width="25" alt="Twitter"></a></li>
+			<li class="social-item"><a class="social-link" href="#"><img src="assets/images/icon-pinterest.svg" width="25" alt="Pinterest"></a></li>
 		</ul>
 	</footer>
 </body>
