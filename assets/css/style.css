@@ -52,7 +52,7 @@ body {
   padding-block: 0.6rem;
 }
 .hero .header .nav-link:hover {
-  background-color: hsla(0, 0%, 100%, 0.25);
+  background-color: none;
 }
 
 .features {
@@ -186,13 +186,51 @@ ul {
   list-style: none;
 }
 
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 42rem) {
   .hero {
     background-image: url("../images/icon-arrow-down.svg"), url("../images/mobile/image-header.jpg");
     background-position: 50% 65%, center;
+    position: relative;
   }
   .hero .nav {
-    display: none;
+    position: absolute;
+    top: 18%;
+    right: 5%;
+    min-width: 90%;
+    padding-block: 2rem;
+    background-color: white;
+  }
+  .hero .nav::before {
+    display: inline-block;
+    content: " ";
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    position: absolute;
+    top: -10%;
+    right: 0;
+    border-top: 35px solid transparent;
+    border-left: 0px solid white;
+    border-right: 35px solid white;
+  }
+  .hero .nav-list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero .nav-menu {
+    width: fit-content;
+    display: inline-block;
+  }
+  .hero .nav-link {
+    display: inline-block;
+    min-width: 8rem;
+    color: hsl(212, 27%, 19%) !important;
+    background-color: none;
   }
   .features {
     grid-template-columns: 1fr;
@@ -245,14 +283,25 @@ ul {
     grid-column: 2;
     background: url("../images/mobile/image-gallery-sugar-cubes.jpg");
   }
+  .bg-none {
+    background-color: hsl(51, 100%, 49%);
+    text-transform: uppercase;
+    font-family: "Fraunces";
+  }
 }
 @media screen and (min-width: 42rem) {
   .hero {
     background-image: url("../images/icon-arrow-down.svg"), url("../images/desktop/image-header.jpg");
     background-position: center;
   }
+  .hero .nav {
+    display: inline-block !important;
+  }
   .hero .nav-link {
     padding-inline: 0.25rem;
+  }
+  .hero .nav-link:hover {
+    background-color: hsla(0, 0%, 100%, 0.25);
   }
   .features {
     grid-template-columns: 1fr 1fr;
@@ -328,6 +377,11 @@ ul {
   }
   .gallery .block-4 {
     background: url("../images/desktop/image-gallery-sugarcubes.jpg");
+  }
+  .bg-none {
+    background-color: white;
+    color: hsla(0, 0%, 0%, 0.9) !important;
+    font-family: "Fraunces";
   }
 }
 @media screen and (min-width: 64rem) {
